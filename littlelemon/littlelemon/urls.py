@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
+
 
 urlpatterns = [
-    path('', include('restaurant.urls')),
+    path('', lambda request: redirect('admin/')),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('restaurant/', include('restaurant.urls')),
+    path('api/', include('restaurant.urls')),
 ]

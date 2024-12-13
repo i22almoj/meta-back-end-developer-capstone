@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from restaurant.models import Menu, Booking
+from restaurant.models import MenuItem, Booking
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,8 +13,8 @@ class BookingSerializer(serializers.ModelSerializer):
       fields = ['name', 'no_of_guests', 'booking_date']
 
 
-class MenuSerializer(serializers.ModelSerializer):
+class MenuItemSerializer(serializers.ModelSerializer):
   class Meta:
-      model = Menu
+      model = MenuItem
       fields = ['id', 'title', 'price', 'inventory']
       read_only = ['id']
