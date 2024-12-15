@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import warnings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -37,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'LittleLemonAPI',
+    'restaurant',
+    'api',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser'
@@ -146,3 +149,6 @@ REST_FRAMEWORK = {
 DJOSER={"USER_ID_FIELD":"username"}
 
 APPEND_SLASH = True
+
+TIME_ZONE = 'America/Chicago'
+USE_TZ = True

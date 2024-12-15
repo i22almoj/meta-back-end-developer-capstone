@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from LittleLemonAPI.models import MenuItem, Booking
+from .models import MenuItem, Booking
+from django.utils import timezone
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,7 +15,9 @@ class GroupNameField(serializers.RelatedField):
         return value.name
               
 class BookingSerializer(serializers.ModelSerializer):
-  class Meta:
+    booking_date = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", default=timezone.now)
+
+    class Meta:
       model = Booking
       fields = ['id', 'name', 'no_of_guests', 'booking_date']
 

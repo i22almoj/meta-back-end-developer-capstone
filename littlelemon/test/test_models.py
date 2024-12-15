@@ -1,5 +1,5 @@
 from django.test import TestCase
-from LittleLemonAPI.models import Booking, MenuItem
+from restaurant.models import Booking, MenuItem
 from django.utils import timezone
 
 class BookingTest(TestCase):
