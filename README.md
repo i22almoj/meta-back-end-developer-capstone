@@ -106,7 +106,7 @@ http://127.0.0.1:8000/auth/users/reset_username_confirm/
 
 ## Pruebas
 
-Hay un total de 12 pruebas unitaria para asegurarnos del correcto funcionamiento de los endpoints de la API
+Hay un total de 14 pruebas unitaria para asegurarnos del correcto funcionamiento de los endpoints de la API
 
 Ejecutar los tests:
 
@@ -117,12 +117,12 @@ python manage.py test
 Debe mostrarse algo parecido a esto:
 
 ```jsx
-Found 12 test(s).
+Found 14 test(s).
 Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
-............
+..............
 ----------------------------------------------------------------------
-Ran 12 tests in 1.808s
+Ran 14 tests in 1.820s
 
 OK
 Destroying test database for alias 'default'...
