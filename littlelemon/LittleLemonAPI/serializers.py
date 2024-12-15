@@ -6,11 +6,16 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'groups']
-        
+
+class GroupNameField(serializers.RelatedField):
+    def to_representation(self, value):
+        # Return the group name
+        return value.name
+              
 class BookingSerializer(serializers.ModelSerializer):
   class Meta:
       model = Booking
-      fields = ['name', 'no_of_guests', 'booking_date']
+      fields = ['id', 'name', 'no_of_guests', 'booking_date']
 
 
 class MenuItemSerializer(serializers.ModelSerializer):
